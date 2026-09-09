@@ -552,3 +552,28 @@ body {
 .mb-6 {
   margin-bottom: 1.5rem;
 }
+
+/*
+ * Mobile tweaks — on small screens the composer toolbar (Photo /
+ * Emoji / Create poll + Post button) gets cramped. Hiding the text
+ * labels keeps everything on one line without overflowing.
+ */
+@media (max-width: 480px) {
+  .composer .composer-box .d-flex.align-items-center.justify-content-between {
+    flex-wrap: nowrap;
+  }
+
+  .composer-action {
+    padding: 6px 8px;
+  }
+
+  .composer-action span {
+    display: none;
+  }
+
+  .compose-post-btn {
+    margin-left: auto;
+    padding: 6px 18px;
+    white-space: nowrap;
+  }
+}
