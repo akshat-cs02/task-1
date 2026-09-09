@@ -69,6 +69,23 @@ task-1/
 
 ---
 
+## Setup
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) 18+
+- Git
+- A MongoDB database — free [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register) M0 cluster
+
+### Get the code
+
+```bash
+git clone https://github.com/akshat-cs02/task-1.git
+cd task-1
+```
+
+---
+
 ## Running this project locally
 
 ### 1. Backend
