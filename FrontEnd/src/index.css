@@ -1,0 +1,554 @@
+/*
+ * index.css — main stylesheet for the app.
+ *
+ * I kept the design clean and minimal — purple-ish brand color
+ * (matching the logo vibe), soft grays for backgrounds, and
+ * rounded corners everywhere. No heavy animations, just smooth
+ * transitions on hover states.
+ *
+ * The CSS variables at the top make it easy to tweak colors
+ * without hunting through the whole file.
+ */
+
+:root {
+  --brand: #7c3aed;
+  --brand-dark: #6d28d9;
+  --bg: #f5f6fa;
+  --card: #ffffff;
+  --text: #1f2430;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* max-width container — keeps content centered and readable on large screens */
+.app-shell {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 16px 32px;
+}
+
+/* ===== Navbar ===== */
+.app-navbar {
+  background-color: var(--card);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.app-navbar .inner {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.brand-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* ===== Auth page ===== */
+.auth-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.auth-header .hint {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.auth-hero-icon {
+  font-size: 56px;
+  text-align: center;
+}
+
+/* ===== Composer (post / promotion) ===== */
+.composer .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.composer-box {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.composer-box textarea {
+  border: none;
+  resize: none;
+  outline: none;
+  width: 100%;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.image-preview {
+  position: relative;
+  margin-top: 10px;
+}
+
+.image-preview img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.image-preview .remove {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+/* ===== Post card ===== */
+.post-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.post-card .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.post-time {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.post-body {
+  font-size: 15px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.post-image {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 12px;
+}
+
+/* ===== Action buttons (like / comment / share) ===== */
+.post-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: 0.15s;
+  cursor: pointer;
+}
+
+.action-btn:hover {
+  background: #f1f0f5;
+  color: var(--text);
+}
+
+.action-btn.liked {
+  color: #e0245e;
+  font-weight: 600;
+}
+
+.action-btn.shared {
+  color: var(--brand);
+  font-weight: 600;
+}
+
+.action-btn .count {
+  min-width: 12px;
+}
+
+/* ===== Comments ===== */
+.comments-section {
+  border-top: 1px solid var(--border);
+}
+
+.comment-row {
+  display: flex;
+  gap: 10px;
+}
+
+.comment-author {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.comment-body {
+  background: #f1f0f5;
+  border-radius: 0 10px 10px 10px;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.comment-input-box {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* ===== Loading skeleton ===== */
+.skeleton {
+  background: linear-gradient(90deg, #ececf1 25%, #f6f6fa 50%, #ececf1 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 8px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ===== Empty state ===== */
+.empty-feed {
+  text-align: center;
+  padding: 48px 16px;
+  color: var(--muted);
+}
+
+.empty-feed .icon {
+  font-size: 48px;
+  color: #c4b5fd;
+}
+
+/* ===== Form helpers ===== */
+.form-label-required::after {
+  content: ' *';
+  color: #dc2626;
+}
+
+.btn-brand {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+}
+
+.btn-brand:hover,
+.btn-brand:focus {
+  background: linear-gradient(135deg, #6d28d9, #5b21b6);
+  color: #fff;
+}
+
+/* ===== Toolbar: Create Post + All posts / Promotions ===== */
+.feed-toolbar {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.feed-seg .nav-link {
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 20px;
+  color: var(--muted);
+}
+
+.feed-seg .nav-link.active {
+  background: var(--brand);
+  color: #fff;
+}
+
+/* ===== Feed sort tabs ===== */
+.feed-sort-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.sort-tab {
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.sort-tab:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+.sort-tab.active {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+
+/* ===== Composer action buttons (Photo / Emoji / Poll) ===== */
+.composer-action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.composer-action:hover {
+  background: #f1f0f5;
+  color: var(--text);
+}
+
+/* Emoji picker grid */
+.emoji-picker {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 4px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-top: 10px;
+  padding: 10px;
+  background: #fff;
+  max-height: 160px;
+  overflow-y: auto;
+}
+
+.emoji-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  padding: 4px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.emoji-btn:hover {
+  background: #f1f0f5;
+}
+
+.compose-post-btn {
+  border-radius: 20px;
+}
+
+/* ===== Poll modal duration pills ===== */
+.duration-pill {
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 20px;
+  padding: 7px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.duration-pill:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+.duration-pill.active {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+
+/* ===== Poll block inside a post ===== */
+.poll-block {
+  border: 1px solid var(--border);
+  background: #fafafe;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.poll-time {
+  font-size: 11px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.poll-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  border: 1px solid #d9d4e8;
+  background: #fff;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 9px 12px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.poll-option:hover {
+  border-color: var(--brand);
+  background: #f6f3ff;
+}
+
+.poll-vote-hint {
+  font-size: 11px;
+  color: var(--brand);
+  font-weight: 600;
+}
+
+.poll-result .progress {
+  border-radius: 20px;
+}
+
+/* ===== Promotions ===== */
+.promo-banner .promo-badge {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.promo-badge {
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.promotion-block {
+  border: 1px solid #e4ddfb;
+  background: linear-gradient(180deg, #fbfaff, #f5f2ff);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.promo-category {
+  display: inline-block;
+  border: 1px solid var(--brand);
+  color: var(--brand);
+  background: #f3efff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* ===== Report modal ===== */
+.report-radio label {
+  cursor: pointer;
+}
+
+.report-radio input:checked ~ label {
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ===== Three-dot menu ===== */
+.dots-btn {
+  color: var(--muted);
+  line-height: 1;
+}
+
+.dots-btn:hover {
+  background: #f1f0f5;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+/* ===== Misc helpers ===== */
+.text-brand {
+  color: var(--brand);
+}
+
+.text-muted-light {
+  color: var(--muted);
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
