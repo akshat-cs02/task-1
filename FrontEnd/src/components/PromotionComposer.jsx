@@ -18,7 +18,7 @@ import { api } from '../api';
 import { useAuth } from '../context/AuthContext';
 import PollModal from './PollModal';
 import { EMOJIS, PROMOTION_CATEGORIES } from '../constants';
-import { FiCamera, FiX, FiChevronDown } from 'react-icons/fi';
+import { FiCamera, FiX, FiChevronDown, FiSmile, FiBarChart2 } from 'react-icons/fi';
 
 function initials(name) {
   return name
@@ -170,12 +170,12 @@ export default function PromotionComposer({ onCreated }) {
                 <span>Photo</span>
               </button>
               <button className="composer-action" onClick={() => setShowEmoji((s) => !s)} title="Add emoji">
-                <span style={{ fontSize: 18 }}>😊</span>
+                <FiSmile size={18} />
                 <span>Emoji</span>
                 <FiChevronDown size={14} />
               </button>
               <button className="composer-action" onClick={() => setShowPoll(true)} title="Create poll">
-                📊
+                <FiBarChart2 size={18} />
                 <span>Create poll</span>
               </button>
             </div>
