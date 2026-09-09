@@ -110,36 +110,6 @@ The Vite dev server proxies `/api` requests to `localhost:5000`, so no CORS issu
 
 ---
 
-## Deploying
-
-### Backend → Render (free)
-
-1. Push `task-1/BackEnd` to your GitHub repo.
-2. [Render](https://render.com) → **New → Web Service** → import repo.
-3. Set **Root Directory:** `task-1/BackEnd`
-4. Environment variables:
-   - `MONGO_URI` — your MongoDB Atlas connection string
-   - `JWT_SECRET` — a long random string
-   - `CLIENT_URL` — your deployed frontend URL
-5. Deploy → you get a URL like `https://your-app.onrender.com`
-
-### Frontend → Vercel (free)
-
-1. Push `task-1/FrontEnd` to your GitHub repo.
-2. [Vercel](https://vercel.com) → import repo.
-3. Framework preset: **Vite**. Root directory: `task-1/FrontEnd`.
-4. Build command: `npm run build`. Output: `dist`.
-5. Environment variable: `VITE_API_URL` = your Render backend URL.
-
-### Database → MongoDB Atlas
-
-1. Create a project → create a free **M0** cluster.
-2. **Database Access:** add a user (username + password).
-3. **Network Access:** allow `0.0.0.0/0` (needed for Render).
-4. **Connect** → Drivers → copy the connection string into `MONGO_URI`.
-
----
-
 ## Built with
 
 - [React](https://react.dev/) + [Vite](https://vite.dev/) + [React Bootstrap](https://react-bootstrap.github.io/)
