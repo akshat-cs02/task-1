@@ -1,13 +1,8 @@
 /*
- * index.css — main stylesheet for the app.
- *
- * I kept the design clean and minimal — purple-ish brand color
- * (matching the logo vibe), soft grays for backgrounds, and
+ * I kept the design clean and minimal  purple-ish brand color
+ *, soft grays for backgrounds, and
  * rounded corners everywhere. No heavy animations, just smooth
  * transitions on hover states.
- *
- * The CSS variables at the top make it easy to tweak colors
- * without hunting through the whole file.
  */
 
 :root {
@@ -36,7 +31,7 @@ body {
   padding: 0 16px 32px;
 }
 
-/* ===== Navbar ===== */
+/* Navbar  */
 .app-navbar {
   background-color: var(--card);
   border-bottom: 1px solid var(--border);
@@ -75,7 +70,7 @@ body {
   color: #fff;
 }
 
-/* ===== Auth page ===== */
+/* Auth page */
 .auth-wrap {
   min-height: 100vh;
   display: flex;
@@ -104,7 +99,7 @@ body {
   text-align: center;
 }
 
-/* ===== Composer (post / promotion) ===== */
+/* Composer (post / promotion)*/
 .composer .avatar {
   width: 40px;
   height: 40px;
@@ -190,7 +185,7 @@ body {
   margin-top: 12px;
 }
 
-/* ===== Action buttons (like / comment / share) ===== */
+/* Action buttons (like / comment / share)  */
 .post-actions {
   display: flex;
   align-items: center;
@@ -230,7 +225,7 @@ body {
   min-width: 12px;
 }
 
-/* ===== Comments ===== */
+/*  Comments */
 .comments-section {
   border-top: 1px solid var(--border);
 }
@@ -258,7 +253,7 @@ body {
   align-items: center;
 }
 
-/* ===== Loading skeleton ===== */
+/*  Loading skeleton  */
 .skeleton {
   background: linear-gradient(90deg, #ececf1 25%, #f6f6fa 50%, #ececf1 75%);
   background-size: 200% 100%;
@@ -271,7 +266,7 @@ body {
   100% { background-position: -200% 0; }
 }
 
-/* ===== Empty state ===== */
+/*  Empty state*/
 .empty-feed {
   text-align: center;
   padding: 48px 16px;
@@ -283,7 +278,7 @@ body {
   color: #c4b5fd;
 }
 
-/* ===== Form helpers ===== */
+
 .form-label-required::after {
   content: ' *';
   color: #dc2626;
@@ -302,7 +297,7 @@ body {
   color: #fff;
 }
 
-/* ===== Toolbar: Create Post + All posts / Promotions ===== */
+/*Toolbar: Create Post + All posts / Promotions  */
 .feed-toolbar {
   flex-wrap: wrap;
   gap: 10px;
@@ -320,7 +315,7 @@ body {
   color: #fff;
 }
 
-/* ===== Feed sort tabs ===== */
+/*Feed sort tabs  */
 .feed-sort-tabs {
   display: flex;
   gap: 8px;
@@ -352,7 +347,7 @@ body {
   color: #fff;
 }
 
-/* ===== Composer action buttons (Photo / Emoji / Poll) ===== */
+/*  Composer action buttons (Photo / Emoji / Poll) */
 .composer-action {
   display: flex;
   align-items: center;
@@ -404,7 +399,7 @@ body {
   border-radius: 20px;
 }
 
-/* ===== Poll modal duration pills ===== */
+/* Poll modal duration pills */
 .duration-pill {
   border: 1px solid var(--border);
   background: #fff;
@@ -428,7 +423,7 @@ body {
   color: #fff;
 }
 
-/* ===== Poll block inside a post ===== */
+/*  Poll block inside a post */
 .poll-block {
   border: 1px solid var(--border);
   background: #fafafe;
@@ -476,7 +471,7 @@ body {
   border-radius: 20px;
 }
 
-/* ===== Promotions ===== */
+/* Promotions */
 .promo-banner .promo-badge {
   font-size: 11px;
   font-weight: 600;
@@ -512,7 +507,7 @@ body {
   border-radius: 20px;
 }
 
-/* ===== Report modal ===== */
+/* Report modal  */
 .report-radio label {
   cursor: pointer;
 }
@@ -522,7 +517,7 @@ body {
   color: var(--text);
 }
 
-/* ===== Three-dot menu ===== */
+/* Three-dot menu */
 .dots-btn {
   color: var(--muted);
   line-height: 1;
@@ -536,7 +531,7 @@ body {
   display: none;
 }
 
-/* ===== Misc helpers ===== */
+
 .text-brand {
   color: var(--brand);
 }
@@ -554,7 +549,7 @@ body {
 }
 
 /*
- * Mobile tweaks — on small screens the composer toolbar (Photo /
+ * Mobile tweaks  on small screens the composer toolbar (Photo /
  * Emoji / Create poll + Post button) gets cramped. Hiding the text
  * labels keeps everything on one line without overflowing.
  */
